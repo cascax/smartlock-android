@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="music_name">
+        <item>三声傻逼</item>
+        <item>你是谁</item>
+        <item>灯亮开门</item>
+    </string-array>
+
+    <string-array name="music_file">
+        <item>doorbell</item>
+        <item>who</item>
+        <item>lightandopen</item>
+    </string-array>
+</resources>

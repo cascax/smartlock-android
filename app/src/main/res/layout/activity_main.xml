@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:layout_gravity="center"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/text_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/btn_remote_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/remote_open"
+        android:textSize="42sp"
+        android:layout_margin="8dp"
+        android:padding="28dp" />
+
+    <Button
+        android:id="@+id/btn_local_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/local_open"
+        android:textSize="42sp"
+        android:layout_margin="8dp"
+        android:padding="28dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_just_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/just_open"
+            android:textSize="20sp"
+            android:layout_margin="3dp"
+            android:padding="15dp" />
+        <Button
+            android:id="@+id/btn_just_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/just_close"
+            android:textSize="20sp"
+            android:layout_margin="3dp"
+            android:padding="15dp" />
+        <Button
+            android:id="@+id/btn_adjust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/just_adjust"
+            android:textSize="20sp"
+            android:layout_margin="3dp"
+            android:padding="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <Spinner
+            android:id="@+id/spinner_music"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:entries="@array/music_name" />
+        <Button
+            android:id="@+id/btn_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play_music"
+            android:textSize="20sp"
+            android:layout_margin="3dp"
+            android:padding="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

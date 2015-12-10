@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Smart321</string>
+
+    <string name="remote_open">开门</string>
+    <string name="local_open">内网开门</string>
+    <string name="just_open">只开</string>
+    <string name="just_close">只关</string>
+    <string name="just_adjust">调整</string>
+    <string name="play_music">播放</string>
+
+    <string name="info_not_local">现在不是内网环境</string>
+    <string name="send_success">指令发送成功</string>
+    <string name="send_timeout">连接超时</string>
+    <string name="send_failed">指令发送失败</string>
+    <string name="dialog_ok">确定</string>
+    <string name="dialog_info">请输入用户名</string>
+
+    <string name="action_settings">设置</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+</resources>
