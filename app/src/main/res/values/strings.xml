@@ -7,6 +7,7 @@
     <string name="just_close">只关</string>
     <string name="just_adjust">调整</string>
     <string name="play_music">播放</string>
+    <string name="open_for_guest">来客</string>
 
     <string name="info_not_local">现在不是内网环境</string>
     <string name="send_success">指令发送成功</string>

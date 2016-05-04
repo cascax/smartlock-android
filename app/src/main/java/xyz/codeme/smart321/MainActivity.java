@@ -17,9 +17,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.http.protocol.HTTP;
-import org.json.JSONObject;
-
 import xyz.codeme.smart321.utils.HttpUtils;
 
 
@@ -35,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mJustOpen;
     private Button mJustClose;
     private Button mJustAdjuct;
+    private Button mGuest;
     private Button mMusic;
     private TextView mTextUserName;
     private Spinner mMusicSpinner;
@@ -49,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mJustOpen = (Button) findViewById(R.id.btn_just_open);
         mJustClose = (Button) findViewById(R.id.btn_just_close);
         mJustAdjuct = (Button) findViewById(R.id.btn_adjust);
+        mGuest = (Button) findViewById(R.id.btn_guest);
         mMusic = (Button) findViewById(R.id.btn_music);
         mTextUserName = (TextView) findViewById(R.id.text_user);
         mMusicSpinner = (Spinner) findViewById(R.id.spinner_music);
@@ -71,9 +70,6 @@ public class MainActivity extends AppCompatActivity {
         mLoaclOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!inTheLocal()) {
-                    showToast(R.string.info_not_local);
-                }
                 sendOpenOrder(false);
             }
         });
@@ -95,6 +91,13 @@ public class MainActivity extends AppCompatActivity {
                 sendLocalOrder(HttpUtils.ORDER_ADJUST_DOOR);
             }
         });
+        mGuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendOpenOrder(false);
+                sendPlayMusicOrder(1);
+            }
+        });
         mMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,8 +109,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 获取用户名
      */
-    private void getUserName()
-    {
+    private void getUserName() {
         mUserName = mPreferences.getString("UserName", "");
         if(mUserName.length() < 1) {
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
@@ -132,8 +134,12 @@ public class MainActivity extends AppCompatActivity {
     private void sendOpenOrder(boolean romate) {
         if(romate)
             mHttp.sendRomateOpenOrder();
-        else
+        else {
+            if (!inTheLocal()) {
+                showToast(R.string.info_not_local);
+            }
             mHttp.sendLocalOpenOrder();
+        }
     }
 
     private void sendLocalOrder(String order) {
@@ -144,6 +150,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendPlayMusicOrder() {
+        int musicIndex = (int) mMusicSpinner.getSelectedItemId();
+        sendPlayMusicOrder(musicIndex);
+    }
+
+    private void sendPlayMusicOrder(int musicIndex) {
         if (!inTheLocal()) {
             showToast(R.string.info_not_local);
         }
@@ -152,8 +163,6 @@ public class MainActivity extends AppCompatActivity {
         if(mMusicName == null) {
             mMusicName = getResources().getStringArray(R.array.music_file);
         }
-
-        int musicIndex = (int) mMusicSpinner.getSelectedItemId();
         mHttp.playMusic(mMusicName[musicIndex]);
     }
 

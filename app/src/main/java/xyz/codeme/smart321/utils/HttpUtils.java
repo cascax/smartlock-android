@@ -92,6 +92,7 @@ public class HttpUtils {
                 writer.flush();
 
                 socket.close();
+                Log.i(TAG, "Order success: " + order);
                 handler.sendEmptyMessage(SEND_SUCCESS);
             } catch (SocketTimeoutException e) {
                 Log.w(TAG, "socket timeout");

@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="@string/remote_open"
         android:textSize="42sp"
-        android:layout_margin="8dp"
+        android:layout_margin="6dp"
         android:padding="28dp" />
 
     <Button
@@ -36,39 +36,48 @@
         android:layout_height="wrap_content"
         android:text="@string/local_open"
         android:textSize="42sp"
-        android:layout_margin="8dp"
+        android:layout_margin="6dp"
         android:padding="28dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="5dp">
 
         <Button
             android:id="@+id/btn_just_open"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:padding="14dp"
             android:text="@string/just_open"
-            android:textSize="20sp"
-            android:layout_margin="3dp"
-            android:padding="15dp" />
+            android:textSize="20sp" />
         <Button
             android:id="@+id/btn_just_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:padding="14dp"
             android:text="@string/just_close"
-            android:textSize="20sp"
-            android:layout_margin="3dp"
-            android:padding="15dp" />
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/btn_adjust"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:padding="14dp"
             android:text="@string/just_adjust"
-            android:textSize="20sp"
-            android:layout_margin="3dp"
-            android:padding="15dp" />
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/btn_guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:padding="14dp"
+            android:text="@string/open_for_guest"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout

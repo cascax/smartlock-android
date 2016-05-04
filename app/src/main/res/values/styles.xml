@@ -4,8 +4,8 @@
 
     </style>
 
-    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
+    <style name="BaseTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/text_primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorButtonNormal">@color/primary_light</item>
         <item name="android:textColorPrimary">@color/text_primary</item>
